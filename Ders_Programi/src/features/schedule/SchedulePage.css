@@ -1,0 +1,249 @@
+.schedule-page {
+    padding: 2rem;
+    min-height: 100vh;
+    /* Allow it to grow */
+    display: flex;
+    flex-direction: column;
+}
+
+.schedule-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.schedule-tools {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex: 1;
+    justify-content: center;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 0.5rem 0.75rem;
+    min-width: min(520px, 100%);
+    box-shadow: var(--shadow-sm);
+}
+
+.search-icon {
+    color: var(--text-muted);
+    flex: 0 0 auto;
+}
+
+.search-box input {
+    border: none;
+    background: transparent;
+    padding: 0.25rem 0;
+    width: 100%;
+    outline: none;
+    color: var(--text-main);
+}
+
+.search-box:focus-within {
+    border-color: rgb(249 115 22 / 0.65);
+    box-shadow: 0 0 0 4px var(--focus-ring);
+}
+
+.schedule-grid {
+    display: flex;
+    gap: 1rem;
+    /* overflow-x: auto;  Remove horizontal overflow to avoid dual scrolls if possible, but keep for small screens? User emphasized vertical. */
+    overflow-x: auto;
+    flex: 1;
+    padding-bottom: 1rem;
+    align-items: flex-start;
+    /* Prevent stretching if not needed, but stretching is usually good for cols */
+}
+
+.schedule-grid.weekly .day-column {
+    min-width: 15px;
+    /* Minimum width for columns */
+    flex: 1;
+}
+
+.schedule-grid.daily {
+    justify-content: center;
+}
+
+.schedule-grid.daily .day-column {
+    width: 100%;
+    max-width: 600px;
+}
+
+.day-column {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    background: var(--bg-app);
+    border-radius: var(--radius-lg);
+    padding: 0.5rem;
+}
+
+.card-note {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-top: 2px;
+}
+
+.day-header {
+    text-align: center;
+    font-weight: 700;
+    padding: 0.75rem;
+    background: var(--bg-card);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    color: var(--primary);
+}
+
+.day-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    /* overflow-y: auto; REMOVED */
+    flex: 1;
+}
+
+/* Event Card Styles */
+.schedule-slot {
+    padding: 0.75rem;
+    background: var(--bg-card);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    transition: all 0.2s;
+    min-height: 80px;
+    /* Taller cards like original */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.schedule-slot:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary);
+}
+
+.schedule-slot.match {
+    border-color: rgb(249 115 22 / 0.75);
+    box-shadow: 0 0 0 3px rgb(249 115 22 / 0.16);
+}
+
+.schedule-slot.filled {
+    border-left: 4px solid;
+}
+
+.schedule-slot.empty {
+    border-style: dashed;
+    align-items: center;
+    color: var(--text-muted);
+}
+
+.slot-time-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-bottom: 0.25rem;
+}
+
+.card-title {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.schedule-slot.break {
+    min-height: 20px;
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: default;
+}
+
+.schedule-slot.break:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.break-line {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: var(--border-color);
+    opacity: 0.5;
+}
+
+/* Day Selector for Daily View */
+.day-selector {
+    display: flex;
+    gap: 0.5rem;
+    background: var(--bg-card);
+    padding: 0.5rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    flex-wrap: wrap;
+}
+
+.day-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    background: transparent;
+    border-radius: var(--radius-sm);
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+.day-btn:hover {
+    background: var(--bg-app);
+}
+
+.day-btn.active {
+    background: var(--primary);
+    color: white;
+}
+
+/* View Toggle */
+.view-toggle {
+    display: flex;
+    background: var(--bg-app);
+    padding: 0.25rem;
+    border-radius: var(--radius-md);
+    gap: 0.25rem;
+}
+
+.toggle-btn {
+    border: none;
+    background: transparent;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.toggle-btn:hover {
+    color: var(--text-main);
+}
+
+.toggle-btn.active {
+    background: var(--bg-card);
+    color: var(--primary);
+    box-shadow: var(--shadow-sm);
+}

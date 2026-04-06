@@ -1,0 +1,58 @@
+export const initialSchedule = {
+    "Pazartesi": [
+      { id: 101, time: '09:00 - 11:00', note: 'Planla', description: '' },
+      { id: 102, time: '11:00 - 13:30', note: 'Planla', description: '' },
+      { id: 103, time: '13:30 - 15:30', note: 'Planla', description: '' },
+      { id: 104, time: '15:30 - 18:00', note: 'Planla', description: '' },
+      { id: 105, time: '18:00 - 21:30', note: 'Planla', description: '' },
+      { id: 106, time: '21:30 - 23:00', note: 'Planla', description: '' },
+    ],
+    "Salı": [
+      { id: 201, time: '09:00 - 11:00', note: 'Planla', description: '' },
+      { id: 202, time: '11:00 - 13:30', note: 'Planla', description: '' },
+      { id: 203, time: '13:30 - 15:30', note: 'Planla', description: '' },
+      { id: 204, time: '15:30 - 18:00', note: 'Planla', description: '' },
+      { id: 205, time: '18:00 - 21:30', note: 'Planla', description: '' },
+      { id: 206, time: '21:30 - 23:00', note: 'Planla', description: '' },
+    ],
+    "Çarşamba": [
+      { id: 301, time: '09:00 - 11:00', note: 'Planla', description: '' },
+      { id: 302, time: '11:00 - 13:30', note: 'Planla', description: '' },
+      { id: 303, time: '13:30 - 15:30', note: 'Planla', description: '' },
+      { id: 304, time: '15:30 - 18:00', note: 'Planla', description: '' },
+      { id: 305, time: '18:00 - 21:30', note: 'Planla', description: '' },
+      { id: 306, time: '21:30 - 23:00', note: 'Planla', description: '' },
+    ],
+    "Perşembe": [
+      { id: 401, time: '09:00 - 11:00', note: 'Planla', description: '' },
+      { id: 402, time: '11:00 - 13:30', note: 'Planla', description: '' },
+      { id: 403, time: '13:30 - 15:30', note: 'Planla', description: '' },
+      { id: 404, time: '15:30 - 18:00', note: 'Planla', description: '' },
+      { id: 405, time: '18:00 - 21:30', note: 'Planla', description: '' },
+      { id: 406, time: '21:30 - 23:00', note: 'Planla', description: '' },
+    ],
+    "Cuma": [
+      { id: 501, time: '09:00 - 11:00', note: 'Planla', description: '' },
+      { id: 502, time: '11:00 - 13:30', note: 'Planla', description: '' },
+      { id: 503, time: '13:30 - 15:30', note: 'Planla', description: '' },
+      { id: 504, time: '15:30 - 18:00', note: 'Planla', description: '' },
+      { id: 505, time: '18:00 - 21:30', note: 'Planla', description: '' },
+      { id: 506, time: '21:30 - 23:00', note: 'Planla', description: '' },
+    ],
+    "Cumartesi": [
+      { id: 601, time: '09:00 - 11:00', note: 'Planla', description: '' },
+      { id: 602, time: '11:00 - 13:30', note: 'Planla', description: '' },
+      { id: 603, time: '13:30 - 15:30', note: 'Planla', description: '' },
+      { id: 604, time: '15:30 - 18:00', note: 'Planla', description: '' },
+      { id: 605, time: '18:00 - 21:30', note: 'Planla', description: '' },
+      { id: 606, time: '21:30 - 23:00', note: 'Planla', description: '' },
+    ],
+    "Pazar": [
+      { id: 701, time: '09:00 - 11:00', note: 'Planla', description: '' },
+      { id: 702, time: '11:00 - 13:30', note: 'Planla', description: '' },
+      { id: 703, time: '13:30 - 15:30', note: 'Planla', description: '' },
+      { id: 704, time: '15:30 - 18:00', note: 'Planla', description: '' },
+      { id: 705, time: '18:00 - 21:30', note: 'Planla', description: '' },
+      { id: 706, time: '21:30 - 23:00', note: 'Planla', description: '' },
+    ]
+  };

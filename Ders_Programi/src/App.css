@@ -1,0 +1,113 @@
+/* App layout */
+.main-layout {
+  min-height: 100vh;
+  background:
+    radial-gradient(1200px 800px at 20% -10%, rgb(249 115 22 / 0.18), transparent 55%),
+    radial-gradient(900px 600px at 90% 10%, rgb(56 189 248 / 0.12), transparent 45%),
+    var(--bg-app);
+}
+
+.loading-screen {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  color: var(--text-muted);
+}
+
+/* Shared UI primitives */
+.btn-primary,
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: var(--radius-md);
+  padding: 0.7rem 1rem;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  transition: transform 160ms var(--ease-out), background-color 160ms var(--ease-out), border-color 160ms var(--ease-out), box-shadow 160ms var(--ease-out), color 160ms var(--ease-out);
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  border: 1px solid rgb(255 255 255 / 0.12);
+  box-shadow: 0 10px 30px rgb(249 115 22 / 0.22);
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: var(--bg-card);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-secondary:hover {
+  transform: translateY(-1px);
+  border-color: rgb(249 115 22 / 0.45);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(255 255 255 / 0.02);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  transition: transform 160ms var(--ease-out), background-color 160ms var(--ease-out), border-color 160ms var(--ease-out);
+}
+
+.btn-icon:hover {
+  transform: translateY(-1px);
+  border-color: rgb(249 115 22 / 0.45);
+  background: rgb(255 255 255 / 0.04);
+}
+
+input[type='text'],
+input[type='number'],
+input[type='time'],
+select,
+textarea {
+  background: var(--bg-card);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 0.75rem 0.85rem;
+  outline: none;
+  transition: border-color 160ms var(--ease-out), box-shadow 160ms var(--ease-out), background-color 160ms var(--ease-out);
+}
+
+input[type='text']:focus,
+input[type='number']:focus,
+input[type='time']:focus,
+select:focus,
+textarea:focus {
+  border-color: rgb(249 115 22 / 0.65);
+  box-shadow: 0 0 0 4px var(--focus-ring);
+}
+
+.fade-in {
+  animation: fadeIn 260ms var(--ease-out);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

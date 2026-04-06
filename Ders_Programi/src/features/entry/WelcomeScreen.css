@@ -1,0 +1,81 @@
+.welcome-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--bg-app) 0%, #1e293b 100%);
+}
+
+.welcome-content {
+    text-align: center;
+    max-width: 600px;
+    width: 90%;
+}
+
+.logo-area {
+    margin-bottom: 4rem;
+}
+
+.logo-icon {
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.logo-area h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin: 0;
+    letter-spacing: -0.05em;
+}
+
+.subtitle {
+    color: var(--text-muted);
+    font-size: 1.125rem;
+    margin-top: 0.5rem;
+}
+
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.action-card {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid transparent;
+    text-align: left;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: var(--bg-card);
+    box-shadow: var(--shadow-md);
+}
+
+.action-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.action-card.primary {
+    border-color: var(--primary);
+}
+
+.action-card.primary .text-content h3 {
+    color: var(--primary);
+}
+
+.action-card h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.action-card p {
+    margin: 0.25rem 0 0;
+    color: var(--text-muted);
+    font-size: 0.875rem;
+}

@@ -1,0 +1,59 @@
+:root {
+  /* Brand */
+  --primary: #f97316;
+  --primary-hover: #ea580c;
+
+  /* Semantic */
+  --danger: #ef4444;
+  --success: #22c55e;
+
+  /* Layout */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Shadows (tuned per theme below) */
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.06);
+  --shadow-md: 0 10px 30px rgb(0 0 0 / 0.08);
+  --shadow-lg: 0 18px 60px rgb(0 0 0 / 0.14);
+
+  /* Default = dark (system preference handled in index.css) */
+  --bg-app: #0b1220;
+  --bg-card: #121c2f;
+  --bg-elevated: #182642;
+
+  --text-main: #f8fafc;
+  --text-muted: #9aa6bf;
+
+  --border-color: #263552;
+  --focus-ring: rgb(249 115 22 / 0.35);
+}
+
+/* Explicit themes */
+:root[data-theme='dark'] {
+  color-scheme: dark;
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+  --bg-app: #f6f7fb;
+  --bg-card: #ffffff;
+  --bg-elevated: #ffffff;
+
+  --text-main: #0f172a;
+  --text-muted: #475569;
+
+  --border-color: #e2e8f0;
+  --shadow-sm: 0 1px 2px rgb(15 23 42 / 0.06);
+  --shadow-md: 0 12px 36px rgb(15 23 42 / 0.10);
+  --shadow-lg: 0 24px 70px rgb(15 23 42 / 0.14);
+  --focus-ring: rgb(249 115 22 / 0.25);
+}
+
+body {
+  background-color: var(--bg-app);
+  color: var(--text-main);
+}
