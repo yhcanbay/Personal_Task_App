@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.persistence.autoconfigure.EntityScan;
 import org.springframework.context.annotation.ComponentScan;
 
-@SpringBootApplication 
+@SpringBootApplication
 @ComponentScan(basePackages = "com.yhcanbay")
 @EntityScan(basePackages = "com.yhcanbay")
 public class TaskAppApplication {
