@@ -15,6 +15,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
+                deleteDir()
                 checkout scm
             }
         }
@@ -39,10 +40,10 @@ pipeline {
                 dir('taskApp/frontend/Ders_Programi') {
                     script {
                         if (isUnix()) {
-                            sh 'npm ci'
+                            sh 'npm ci --no-audit --no-fund'
                             sh 'npm run build'
                         } else {
-                            bat 'npm ci'
+                            bat 'npm ci --no-audit --no-fund'
                             bat 'npm run build'
                         }
                     }
@@ -53,10 +54,12 @@ pipeline {
         stage('Docker Deploy') {
             steps {
                 script {
-                    if (isUnix()) {
-                        sh 'docker compose -f $COMPOSE_FILE up -d --build --remove-orphans'
-                    } else {
-                        bat 'docker compose -f %COMPOSE_FILE% up -d --build --remove-orphans'
+                    retry(2) {
+                        if (isUnix()) {
+                            sh 'docker compose -f $COMPOSE_FILE up -d --build --remove-orphans'
+                        } else {
+                            bat 'docker compose -f %COMPOSE_FILE% up -d --build --remove-orphans'
+                        }
                     }
                 }
             }
