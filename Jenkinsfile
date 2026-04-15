@@ -65,10 +65,10 @@ pipeline {
                 script {
                     if (isUnix()) {
                         sh 'docker compose -f $COMPOSE_FILE ps'
-                        sh 'curl --fail http://localhost:8081/api/settings'
+                        sh 'curl --fail http://localhost:8080/api/settings'
                     } else {
                         bat 'docker compose -f %COMPOSE_FILE% ps'
-                        bat 'powershell -Command "Invoke-WebRequest http://localhost:8081/api/settings -UseBasicParsing | Out-Null"'
+                        bat 'powershell -Command "Invoke-WebRequest http://localhost:8080/api/settings -UseBasicParsing | Out-Null"'
                     }
                 }
             }
