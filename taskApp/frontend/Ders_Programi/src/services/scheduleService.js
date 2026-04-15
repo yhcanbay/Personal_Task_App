@@ -1,15 +1,13 @@
 import { api } from './api';
 import { generateTimeSlots } from '../utils/timeGenerator';
 
-const SCHEDULE_KEY = 'planner_schedule_v1';
-
 export const scheduleService = {
     getSchedule: async () => {
-        return await api.get(SCHEDULE_KEY);
+        return await api.get('/schedules/weekly');
     },
 
     saveSchedule: async (schedule) => {
-        return await api.save(SCHEDULE_KEY, schedule);
+        return await api.put('/schedules/weekly', schedule);
     },
 
     /**

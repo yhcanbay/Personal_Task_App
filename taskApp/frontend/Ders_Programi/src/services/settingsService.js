@@ -1,7 +1,5 @@
 import { api } from './api';
 
-const SETTINGS_KEY = 'planner_settings_v1';
-
 export const DEFAULT_SETTINGS = {
     availability: [{ start: '09:00', end: '18:00' }], // Replaces simple start/end
     divisionCount: 6, // Default division count
@@ -16,7 +14,7 @@ export const DEFAULT_SETTINGS = {
 
 export const settingsService = {
     getSettings: async () => {
-        const settings = await api.get(SETTINGS_KEY);
+        const settings = await api.get('/settings');
         // Merge with defaults
         const merged = { ...DEFAULT_SETTINGS, ...settings };
 
@@ -31,10 +29,10 @@ export const settingsService = {
     },
 
     saveSettings: async (newSettings) => {
-        return await api.save(SETTINGS_KEY, newSettings);
+        return await api.put('/settings', newSettings);
     },
 
     resetSettings: async () => {
-        return await api.save(SETTINGS_KEY, DEFAULT_SETTINGS);
+        return await api.put('/settings', DEFAULT_SETTINGS);
     }
 };

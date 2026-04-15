@@ -1,4 +1,4 @@
-import { api } from './api';
+import { localStoreApi as api } from './api';
 
 const TODOS_KEY = 'planner_todos_v1';
 
