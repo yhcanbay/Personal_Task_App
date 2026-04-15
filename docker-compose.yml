@@ -22,15 +22,16 @@ services:
       dockerfile: Dockerfile
     container_name: taskapp-backend
     environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/taskapp
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/taskapp?currentSchema=task_app
       SPRING_DATASOURCE_USERNAME: taskapp
       SPRING_DATASOURCE_PASSWORD: taskapp
+      APP_DB_SCHEMA: task_app
       APP_FRONTEND_URL: http://localhost:5173
     depends_on:
       db:
         condition: service_healthy
     ports:
-      - "8080:8080"
+      - "8081:8080"
 
   frontend:
     build:
