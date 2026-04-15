@@ -1,0 +1,7 @@
+workflow-aggregator
+git
+github
+github-branch-source
+pipeline-github
+credentials-binding
+workspace-cleanup

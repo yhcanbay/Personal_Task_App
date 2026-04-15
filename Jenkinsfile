@@ -4,6 +4,7 @@ pipeline {
     options {
         timestamps()
         disableConcurrentBuilds()
+        skipDefaultCheckout(true)
     }
 
     environment {
@@ -23,6 +24,7 @@ pipeline {
                 dir('taskApp') {
                     script {
                         if (isUnix()) {
+                            sh 'chmod +x mvnw'
                             sh './mvnw test'
                         } else {
                             bat 'mvnw.cmd test'
