@@ -70,10 +70,20 @@ pipeline {
                 script {
                     if (isUnix()) {
                         sh 'docker compose -f $COMPOSE_FILE ps'
-                        sh 'curl --fail http://localhost:8080/api/settings'
+                        sh '''
+                            for i in 1 2 3 4 5 6 7 8 9 10 11 12; do
+                                if curl --fail --silent http://localhost:8080/api/settings > /dev/null; then
+                                    exit 0
+                                fi
+                                sleep 5
+                            done
+                            exit 1
+                        '''
                     } else {
                         bat 'docker compose -f %COMPOSE_FILE% ps'
-                        bat 'powershell -Command "Invoke-WebRequest http://localhost:8080/api/settings -UseBasicParsing | Out-Null"'
+                        bat '''
+                            powershell -NoProfile -Command "$attempts = 12; for ($i = 1; $i -le $attempts; $i++) { try { Invoke-WebRequest 'http://localhost:8080/api/settings' -UseBasicParsing | Out-Null; exit 0 } catch { if ($i -eq $attempts) { throw }; Start-Sleep -Seconds 5 } }"
+                        '''
                     }
                 }
             }
