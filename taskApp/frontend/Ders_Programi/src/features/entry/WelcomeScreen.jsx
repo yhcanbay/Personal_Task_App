@@ -8,7 +8,7 @@ const WelcomeScreen = ({ onNavigate }) => {
             <div className="welcome-content">
                 <div className="logo-area">
                     <Calendar size={64} className="logo-icon" />
-                    <h1>Haftalık Planlayıcı ama Ersin hocam yok</h1>
+                    <h1>Haftalık Planlayıcı</h1>
                     <p className="subtitle">Zamanınızı en verimli şekilde yönetin</p>
                 </div>
 
